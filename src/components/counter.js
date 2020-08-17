@@ -52,7 +52,7 @@ export default class Counter extends Component {
           type="-"
           count={this.state.count}
           onPress={this.onPress.bind(this)}
-          disabled={beforeLoading}
+          disabled={beforeLoading || count >= this.props.max}
           {...this.props}
         />
 
@@ -66,7 +66,7 @@ export default class Counter extends Component {
           type="+"
           count={this.state.count}
           onPress={this.onPress.bind(this)}
-          disabled={beforeLoading}
+          disabled={beforeLoading || count <= this.props.min}
           {...this.props}
         />
       </View>
